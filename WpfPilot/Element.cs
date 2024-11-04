@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using WpfPilot.AppDriverPayload;
 using WpfPilot.AppDriverPayload.Commands;
 using WpfPilot.Assert;
+using WpfPilot.Elements;
 using WpfPilot.Interop;
 using WpfPilot.Utility.WpfUtility;
 

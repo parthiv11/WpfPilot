@@ -1,4 +1,4 @@
-﻿#pragma warning disable SA1027
+#pragma warning disable SA1027
 
 namespace WpfPilot;
 
@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 using WpfPilot.AppDriverPayload.Commands;
+using WpfPilot.Elements;
 using WpfPilot.Interop;
 using WpfPilot.Utility;
 using WpfPilot.Utility.WpfUtility;
@@ -694,6 +695,17 @@ public sealed class AppDriver : IDisposable
 			{
 				TargetIdToElement[targetId] = new List<Element>()
 				{
+					typeName == "WebView2" ?
+					new WebView2Element(
+						targetId,
+						typeName,
+						parentId,
+						childIds,
+						unwrappedProperties,
+						TargetIdToElement,
+						Channel,
+						(Action) OnAction,
+						(Action<string>) OnAccessProperty) :
 					new Element(
 						targetId,
 						typeName,
