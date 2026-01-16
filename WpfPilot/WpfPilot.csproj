@@ -35,6 +35,7 @@
     <PackageReference Include="Microsoft.CSharp" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="System.ValueTuple" />
+    <PackageReference Include="Microsoft.Web.WebView2" Condition="'$(TargetFramework)' == 'net5.0-windows'" />
     <Content Include="contentFiles\**">
       <Pack>True</Pack>
       <PackagePath>contentFiles</PackagePath>
